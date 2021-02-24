@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script>
+    "use strict";
+
+    function fTemperatur() {
+
+      var vMenge;
+      var vFahrenheit;
+      var vAusgabe;
+
+      vMenge = document.getElementById("idMenge").value;
+      vMenge = parseFloat(vMenge);
+
+      vFahrenheit = vMenge * 1.8 + 32;
+
+      vAusgabe = "";
+      vAusgabe = vAusgabe + "Fahrenheit: ";
+      vAusgabe = vAusgabe + vFahrenheit;
+      vAusgabe = vAusgabe + "°F";
+
+      if (vFahrenheit > 80) {
+          vAusgabe = vAusgabe + " - Du kannst die Jacke zuhause lassen";
+        }
+
+        if (vFahrenheit < 55) {
+          vAusgabe = vAusgabe + " - Solltest eine Winterjacke anziehen";
+        }
+
+
+      document.getElementById("idAusgabe").innerHTML = vAusgabe;
+      }
+    </script>
+    <title>Temperaturumrechner</title>
+  </head><br>
+
+ <body>
+    <h1>Celsius in Fahrenheit</h1>
+    Celsius °C: <input id="idMenge" type="text" value="10" />
+    <button onClick="fTemperatur();">Berechne die Temperatur</button><br /><br>
+    <div id="idAusgabe">Fahrenheit:</div>
+  </body>
+</html>
